@@ -19,7 +19,7 @@ const nightwind = plugin(
     const colors = theme("colors")
     const colorVariants = ["hover"]
     const prefixes = ["text", "bg", "border"]
-    const weights = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+    const weights = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300]
     let importantSelector = ""
     let importantProperty = ""
 
@@ -151,16 +151,16 @@ const nightwind = plugin(
         const color = colorValues.pop()
         const defaultValue = theme(`colors.${color}.${weight}`)
 
-        let invertWeightIndex = 9 - weights.indexOf(Number(weight))
+        let invertWeightIndex = 13 - weights.indexOf(Number(weight))
         let invertWeight = String(weights[invertWeightIndex])
 
         if (theme("nightwind.colorScale.preset")) {
           switch (theme("nightwind.colorScale.preset")) {
             case "reduced":
               let reducedInvertWeightIndex =
-                10 - weights.indexOf(Number(weight))
-              reducedInvertWeightIndex > 9
-                ? (reducedInvertWeightIndex = 9)
+                14 - weights.indexOf(Number(weight))
+              reducedInvertWeightIndex > 13
+                ? (reducedInvertWeightIndex = 13)
                 : reducedInvertWeightIndex
               invertWeight = String(weights[reducedInvertWeightIndex])
               break
